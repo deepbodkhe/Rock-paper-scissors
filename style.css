@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('./images/background-img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+h1{
+    background-color: #081b31;
+    color: #fff;
+    height: 5rem;
+    width: 100%;
+    line-height: 5rem;
+    font-size: 2.5rem;
+}
+
+.owner{
+    background-color: #081b31;
+    color: #fff;
+    height: 2rem;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+}
+
+.choice{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transfrom 0.3s ease-in-out;
+}
+
+.choice:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+    background-color: white;
+    box-shadow: rgba(119, 25, 25, 0.645) 0px 22px 70px 4px;
+}
+
+
+img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+.score-board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: 3rem;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+#user-score,
+#comp-score{
+    font-size: 4rem;
+}
+
+
+.msg-container{
+    margin-top: 5rem;
+}
+
+#msg{
+    background-color: #081b31;
+    color: #fff;
+    font-size: 2rem;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+
+/* Media Queries for Responsiveness */
+@media(max-width:768px){
+    .choices{
+        gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .choice {
+        height: 140px;
+        width: 140px;
+    }
+
+    img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .score-board {
+        gap: 2rem; /* Reduced gap between scores */
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 3rem; /* Reduced font size */
+    }
+
+    #msg {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1{
+        font-size: 2rem; /* Smaller font size for the title */
+        height: 4rem;
+        line-height: 4rem;
+    }
+
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+
+    img {
+        height: 80px;
+        width: 80px;
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 2.5rem; /* Further reduced font size */
+    }
+
+    #msg {
+        font-size: 1.2rem; /* Smaller font size for the message */
+        padding: 0.8rem;
+    }
+}
