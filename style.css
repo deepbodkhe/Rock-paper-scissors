@@ -1,129 +1,226 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-align: center;
     box-sizing: border-box;
 }
 
-body{
-    background-image: url('./images/background-img.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+/* Dark Mode css code */
+body {
+    margin: 0;
+    padding: 0;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.6s;
 }
 
-
-h1{
+h1 {
     background-color: #081b31;
-    color: #fff;
+    color: white;
     height: 5rem;
     width: 100%;
-    line-height: 5rem;
+    line-height: 4rem;
+    margin-bottom: 10px;
     font-size: 2.5rem;
 }
 
-.owner{
-    background-color: #081b31;
-    color: #fff;
-    height: 2rem;
+.container {
+    display: flex;
+    align-items: center;
+    /* margin: 20px; */
 }
 
-.choices{
+.container p {
+    font-size: 20px;
+    color: rgb(86, 24, 24);
+    transition: color 0.4s;
+}
+
+.input {
+    visibility: hidden;
+}
+
+.label {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    background-color: rgba(122, 68, 54, 0.87);
+    border-radius: 20px;
+    border: 1px solid rgb(83, 80, 80);
+    margin-left: 10px;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    position: relative;
+    cursor: pointer;
+    animation: togglOff .4s linear forwards;   
+}
+
+.input:checked + .label {
+    background-color: salmon;
+}
+
+.input:checked + .label .circle {
+    animation: toggleOn .4s linear forwards;
+}
+
+@keyframes toggleOn {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(40px); }
+}
+
+@keyframes toggleOff {
+    0% { transform: translateX(40px); }
+    100% { transform: translateX(0); }
+}
+
+body.dark-mode {
+    background-color: rgba(0, 0, 0, 0.967);
+    color: white;
+}
+
+body.dark-mode p {
+    color: white;
+}
+
+
+
+
+
+/* Rock Paper Scissors game css code Start */
+.game-container {
+    margin-top: 20px;
+}
+
+.user-input { 
+    text-align: center;
+    /* margin-top: 40px; */
+}
+
+#username { 
+    padding: 10px; 
+    font-size: 1rem; 
+    margin-right: 10px;
+}
+
+#start-game { 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    background-color: #081b31; 
+    color: white; 
+    cursor: pointer; 
+}
+
+#start-game:hover { 
+    background-color: #0a2b50; 
+    border: 2px solid white; 
+}
+
+.choices {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
-.choice{
-    height: 180px;
-    width: 180px;
+.choice {
+    height: 80px;
+    width: 80px;
     border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transfrom 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    flex-wrap: wrap;
 }
 
-.choice:hover{
+.choice:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: 0.1s ease-in-out;
     background-color: white;
-    box-shadow: rgba(119, 25, 25, 0.645) 0px 22px 70px 4px;
+    box-shadow: rgb(85, 117, 61) 0px 20px 30px -10px;
+    border: 2px solid wheat;
 }
 
-
-img{
-    height: 150px;
-    width: 150px;
+img {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    /* gap: 5rem; */
     border-radius: 50%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
-
-
-
 
 .score-board {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    margin-top: 3rem;
-    gap: 5rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 5rem;
 }
 
 #user-score,
-#comp-score{
+#comp-score {
     font-size: 4rem;
 }
 
-
-.msg-container{
+.msg-container {
     margin-top: 5rem;
 }
 
-#msg{
+#msg {
     background-color: #081b31;
     color: #fff;
     font-size: 2rem;
     display: inline-block;
     padding: 1rem;
     border-radius: 1rem;
-
 }
 
 
+
+
 /* Media Queries for Responsiveness */
-@media(max-width:768px){
-    .choices{
+@media (max-width: 768px) {
+    .choices {
+        height: 60px;
+        width: 60px;
         gap: 1.5rem;
         margin-top: 3rem;
-        margin-bottom: 3rem;
     }
 
     .choice {
-        height: 140px;
-        width: 140px;
+        height: 80px;
+        width: 80px;
     }
 
     img {
-        height: 120px;
-        width: 120px;
+        height: 50px;
+        width: 50px;
     }
 
     .score-board {
-        gap: 2rem; /* Reduced gap between scores */
+        gap: 2rem; 
     }
 
     #user-score,
     #comp-score {
-        font-size: 3rem; /* Reduced font size */
+        font-size: 3rem; 
     }
 
     #msg {
@@ -132,29 +229,30 @@ img{
 }
 
 @media (max-width: 480px) {
-    h1{
-        font-size: 2rem; /* Smaller font size for the title */
+    h1 {
+        font-size: 2rem; 
         height: 4rem;
         line-height: 4rem;
+        
     }
 
     .choice {
-        height: 100px;
-        width: 100px;
+        height: 50px;
+        width: 50px;
     }
 
     img {
-        height: 80px;
-        width: 80px;
+        height: 40px;
+        width: 40px;
     }
 
     #user-score,
     #comp-score {
-        font-size: 2.5rem; /* Further reduced font size */
+        font-size: 2.5rem; 
     }
 
     #msg {
-        font-size: 1.2rem; /* Smaller font size for the message */
+        font-size: 1.2rem; 
         padding: 0.8rem;
     }
 }
