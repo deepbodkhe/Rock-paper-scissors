@@ -36,7 +36,7 @@ Welcome to the **Rock Paper Scissors Game**! This is a modern, interactive versi
 
 ## 📸 Screenshots
 
-*![image](https://github.com/user-attachments/assets/cb77c527-baee-45d3-bf48-7face731b3c3)
+*![image](https://github.com/user-attachments/assets/c51685d5-89c2-4c35-b672-56a416a3fd11)
 *
 
 ## 🚀 Live Demo
