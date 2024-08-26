@@ -256,3 +256,15 @@ img {
         padding: 0.8rem;
     }
 }
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #081b31; 
+    color: white; 
+    font-size: 0.9rem; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
