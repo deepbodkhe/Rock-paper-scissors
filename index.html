@@ -7,35 +7,52 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p class="owner">Owner:- Deep Bodkhe</p>
-    <div class="choices">
-        <div class="choice" id="rock">
-            <img src="./images/rock.png"/>
-        </div>
-        <div class="choice" id="paper">
-            <img src="./images/paper.png"/>
-        </div>  <div class="choice" id="scissors">
-            <img src="./images/scissors.png"/>
-        </div>
+    <h1 >Rock Paper Scissors</h1>
+
+    <div class="container">
+        <p>Change Theme Mode</p>
+        <input type="checkbox" id="dark-mode" class="input">
+        <label for="dark-mode" class="label">
+            <div class="circle"></div>
+        </label>
     </div>
 
-    <div class="score-board">
-        <div class="score">
-            <p id="user-score">0</p>
-            <p>Your score</p>
-        </div> 
-        <div class="score">
-            <p id="comp-score">0</p>
-            <p>Coumputer score</p>
+    
+    <div class="game-container">
+        <div class="user-input">
+            <input type="text" id="username" placeholder="Enter Your Name">
+            <button id="start-game">Start Game</button>
+        </div>
+        <h2 id="greeting" style="display: none;"></h2>
+
+        <div class="choices">
+            <div class="choice" id="rock">
+                <img src="./images/rock2.png"/>
+            </div>
+            <div class="choice" id="paper">
+                <img src="./images/paper2.png"/>
+            </div>  
+            <div class="choice" id="scissors">
+                <img src="./images/scissors2.png"/>
+            </div>
+        </div>
+
+        <div class="score-board">
+            <div class="score">
+                <p id="user-score">0</p>
+                <p>Your score</p>
+            </div> 
+            <div class="score">
+                <p id="comp-score">0</p>
+                <p>Computer score</p>
+            </div>
+        </div>
+
+        <div class="msg-container">
+            <p id="msg">Play your Move </p>
         </div>
     </div>
-
-
-
-    <div class="msg-container">
-        <p id="msg"> Play your Move </p>
-    </div>
-<script src="app.js"></script>
+    
+    <script src="app.js"></script>
 </body>
 </html>
