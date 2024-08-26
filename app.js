@@ -1,11 +1,53 @@
+
 let userScore = 0;
 let compScore = 0;
 
-
+const startGameBtn = document.querySelector("#start-game");
+const userNameInput = document.querySelector("#username");
+const greeting = document.querySelector("#greeting");
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 const userScorePara = document.querySelector("#user-score");
 const compScorePara = document.querySelector("#comp-score");
+
+const inputE1 = document.getElementById("dark-mode");  // Changed to target by ID
+const bodyE1 = document.querySelector("body");
+
+inputE1.checked = JSON.parse(localStorage.getItem("mode"));
+
+updateBody();
+
+function updateBody() {
+    if (inputE1.checked) {
+        bodyE1.classList.add("dark-mode");
+    } else {
+        bodyE1.classList.remove("dark-mode");
+    }
+}
+
+inputE1.addEventListener("input", () => {
+    updateBody();
+    updateLocalStorage();
+});
+
+function updateLocalStorage() {
+    localStorage.setItem("mode", JSON.stringify(inputE1.checked));
+}
+
+
+
+
+startGameBtn.addEventListener("click", () => {
+    const userName = userNameInput.value.trim();
+    if (userName) {
+        greeting.innerText = `Welcome, ${userName}! Let's play the Game`;
+        greeting.style.display = "block";
+        document.querySelector(".user-input").style.display = "none";
+    } else {
+        alert("Please enter your name to start the game.");
+    }
+});
+
 
 const genCoumputerChoice =() => {
     const options = ["rock", "paper" , "scissors"];
@@ -25,7 +67,7 @@ const showWinner = (userWin,userChoice,compChoice)=>{
         userScore++;
         userScorePara.innerText= userScore;
         // console.log("you win!");
-        msg.innerText = `You win!, Your  ${userChoice} beats ${compChoice}`;
+        msg.innerText = `You win!, ${userChoice} beats ${compChoice}`;
         msg.style.backgroundColor = "green";
     }else{
          compScore++;
@@ -64,8 +106,6 @@ const playGame = (userChoice) => {
     }
 };
 
-
-
 choices.forEach((choice) => {
     console.log(choice);
     choice.addEventListener("click" , () =>{
@@ -74,7 +114,3 @@ choices.forEach((choice) => {
         playGame(userChoice);
     });
 });
-
-
-
-
