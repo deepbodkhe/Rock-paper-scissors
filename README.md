@@ -4,7 +4,7 @@ Welcome to the **Rock Paper Scissors Game**! This is a modern, interactive versi
 
 ## 🎮 Features
 
-- **🚀 Interactive Gameplay:** Enjoy a seamless gaming experience with intuitive controls.
+- **🚀 Interactive Gameplay:** Enjoy a seamless gaming experience with intuitive controls
 - **👤 Personalized Experience:** Enter your name to receive a personalized greeting and track your wins.
 - **📊 Dynamic Scoring:** Compete against the computer with real-time score updates.
 - **🌗 Dark Mode:** Switch between light and dark themes with a single click. Your theme preference is saved for future visits.
