@@ -15,7 +15,7 @@ Welcome to the **Rock Paper Scissors Game**! This is a modern, interactive versi
 1. **Enter Your Name:** Start by typing your name in the input field and hit the **Start Game** button.
 2. **Make Your Move:** Choose between **Rock**, **Paper**, or **Scissors** by clicking on the corresponding icon.
 3. **See the Results:** The computer will make its move, and the result will be displayed on the screen.
-4. **Track Your Score:** Your score and the computer's score are updated automatically after each round.
+4. **Track Your Score:** Your score and the computer's score are updated automatically after each round
 
 ### 🏆 Scoring Rules:
 
